@@ -1,0 +1,51 @@
+Made By: Dilpreet Singh
+Email: sokhipreet911@gmail.com
+
+Commands to setup:
+1. npm i
+2. npx sequelize db:migrate
+3. npm start
+
+
+API endpoint: http://localhost:3000/api/users
+
+Details:
+/**
+ * POST API
+ * @Body { "username": "aadarsh","password": "abcdefg121#2"} 
+ * @Errors  
+ * - Username already exists
+ * - User registration failed
+ * @response { "id": 2, "username": "aadarsh"}
+ */
+
+ SRC Architecture:
+ - src
+  - controllers
+    - userController.js
+  - helpers
+    - responseHelper.js
+  - routes
+    - userRoutes.js
+- server.js
+
+
+
+
+Note from Dilpreet: We have kept sequelize directories outside, 
+                    ideally we can create a new NPM Package as util and keep DB related things there.
+                    and when we have to do things more than just registering users, we can integrate JWT Toekn.
+
+## Requirements:
+
+Exercise : ​Implement a Database Model and Route Handling in NodeJS
+
+Instructions:
+
+Create a new NodeJS project with ExpressJS.
+Configure the connection to a PostgreSQL database using an ORM of your choice (Sequelize or TypeORM are suggested).
+Create a "User" model with the following fields: id, username, password.
+Implement a password hashing function for security.
+Write an API route to create a new user:
+POST /users: Takes in a username and password, hashes the password, and creates a new user in the database. Returns the created user's information (excluding password) in JSON format.
+Handle potential errors in the route, for instance, if a user tries to register with a username that already exists.
